@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:future_jobs/pages/onboarding_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreenPage extends StatefulWidget {
@@ -11,6 +14,15 @@ class SplashScreenPage extends StatefulWidget {
 }
 
 class _SplashScreenPageState extends State<SplashScreenPage> {
+
+  // Timer for Redirect to OnBoradring Page
+  @override
+  void initState() {
+    super.initState();
+
+    Timer(const Duration(seconds: 3), () => Navigator.pushNamed(context, OnBoardingScreen.routeName));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

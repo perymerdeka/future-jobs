@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:future_jobs/pages/onboarding_screen.dart';
 import 'package:future_jobs/pages/splash_screen.dart';
 
 void main() {
@@ -6,14 +7,15 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({ Key? key }) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        SplashScreenPage.routeName : (context) => const SplashScreenPage(),
+        SplashScreenPage.routeName: (context) => const SplashScreenPage(),
+        OnBoardingScreen.routeName: (context) => const OnBoardingScreen()
       },
     );
   }
