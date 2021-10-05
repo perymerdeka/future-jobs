@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class OnBoardingScreen extends StatelessWidget {
+class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
   static const routeName = '/onboarding';
+
+  @override
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+}
+
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +51,7 @@ class OnBoardingScreen extends StatelessWidget {
                 ),
                 Center(
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 400),
+                    padding: const EdgeInsets.only(top: 350),
                     child: SizedBox(
                       width: 200,
                       height: 45,
@@ -53,6 +65,30 @@ class OnBoardingScreen extends StatelessWidget {
                             'Get Started',
                             style: GoogleFonts.poppins(
                                 color: const Color(0xff4141A4),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500),
+                          )),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      top: 16,
+                    ),
+                    child: SizedBox(
+                      width: 200,
+                      height: 45,
+                      child: OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                              side: const BorderSide(color: Colors.white),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(66))),
+                          onPressed: () {},
+                          child: Text(
+                            'Sign In',
+                            style: GoogleFonts.poppins(
+                                color: Colors.white,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500),
                           )),
