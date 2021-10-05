@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:future_jobs/pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -84,7 +85,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               side: const BorderSide(color: Colors.white),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(66))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushNamed(LoginPageScreen.routeName);
+                          },
                           child: Text(
                             'Sign In',
                             style: GoogleFonts.poppins(
