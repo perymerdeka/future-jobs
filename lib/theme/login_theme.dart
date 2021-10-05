@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-TextStyle loginTextStyle = GoogleFonts.poppins(
+TextStyle titleTextStyle = GoogleFonts.poppins(
   color: const Color(0xffB3B5C4),
   fontSize: 16,
   fontWeight: FontWeight.w400,
