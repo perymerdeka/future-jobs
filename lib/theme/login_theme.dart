@@ -12,3 +12,15 @@ TextStyle subtitleTextStyle = GoogleFonts.poppins(
   fontSize: 24,
   fontWeight: FontWeight.w600,
 );
+
+TextStyle buttonTextStyle = GoogleFonts.poppins(
+  color: const Color(0xffFFFFFF),
+  fontSize: 14,
+  fontWeight: FontWeight.w500,
+);
+
+TextStyle signTextStyle = GoogleFonts.poppins(
+  color: const Color(0xffB3B5C4),
+  fontSize: 14,
+  fontWeight: FontWeight.w300
+);
