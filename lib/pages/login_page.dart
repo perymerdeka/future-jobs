@@ -1,15 +1,24 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:future_jobs/theme/login_theme.dart';
 
-class LoginPageScreen extends StatelessWidget {
+class LoginPageScreen extends StatefulWidget {
   const LoginPageScreen({Key? key}) : super(key: key);
   static const routeName = '/login';
 
   @override
+  State<LoginPageScreen> createState() => _LoginPageScreenState();
+}
+
+class _LoginPageScreenState extends State<LoginPageScreen> {
+  bool isEmailValid = true;
+  TextEditingController emailController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [Padding(
+      body: ListView(children: [
+        Padding(
           padding: const EdgeInsets.only(top: 20, left: 24, right: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,6 +54,19 @@ class LoginPageScreen extends StatelessWidget {
                     height: 8,
                   ),
                   TextFormField(
+                    controller: emailController,
+                    onChanged: (value) {
+                      bool isValid = EmailValidator.validate(value);
+                      if (isValid) {
+                        setState(() {
+                          isEmailValid = true;
+                        });
+                      } else {
+                        setState(() {
+                          isEmailValid = false;
+                        });
+                      }
+                    },
                     decoration: InputDecoration(
                         fillColor: const Color(0xffF1F0F5),
                         filled: true,
@@ -53,7 +75,10 @@ class LoginPageScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(100),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide.none,
+                          borderSide: BorderSide(
+                              color: isEmailValid
+                                  ? const Color(0xff4141A4)
+                                  : const Color(0xffFD4F56)),
                           borderRadius: BorderRadius.circular(100),
                         )),
                   )
@@ -71,6 +96,7 @@ class LoginPageScreen extends StatelessWidget {
                     height: 8,
                   ),
                   TextFormField(
+                    obscureText: true,
                     decoration: InputDecoration(
                         fillColor: const Color(0xffF1F0F5),
                         filled: true,
@@ -79,7 +105,7 @@ class LoginPageScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(100),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide.none,
+                          borderSide: const BorderSide(color: Color(0xff4141A4)),
                           borderRadius: BorderRadius.circular(100),
                         )),
                   )
@@ -114,8 +140,7 @@ class LoginPageScreen extends StatelessWidget {
             ],
           ),
         ),
-      ]
-      ),
+      ]),
     );
   }
 }
