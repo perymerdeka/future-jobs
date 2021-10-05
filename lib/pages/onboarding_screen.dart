@@ -36,6 +36,28 @@ class OnBoardingScreen extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.w300),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 400),
+                    child: SizedBox(
+                      width: 200,
+                      height: 45,
+                      child: TextButton(
+                          style: TextButton.styleFrom(
+                              backgroundColor: const Color(0xffFFFFFF),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(66))),
+                          onPressed: () {},
+                          child: Text(
+                            'Get Started',
+                            style: GoogleFonts.poppins(
+                                color: const Color(0xff4141A4),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500),
+                          )),
+                    ),
+                  ),
                 )
               ],
             ),
