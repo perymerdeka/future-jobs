@@ -18,8 +18,8 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: [
-        Padding(
+      body: SingleChildScrollView(
+        child: Padding(
           padding: const EdgeInsets.only(top: 20, left: 24, right: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -147,7 +147,7 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
             ],
           ),
         ),
-      ]),
+      ),
     );
   }
 }
