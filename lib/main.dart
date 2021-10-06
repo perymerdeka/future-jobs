@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:future_jobs/pages/login_page.dart';
 import 'package:future_jobs/pages/onboarding_screen.dart';
+import 'package:future_jobs/pages/sign_up_screen.dart';
 import 'package:future_jobs/pages/splash_screen.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         SplashScreenPage.routeName: (context) => const SplashScreenPage(),
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
         LoginPageScreen.routeName: (context) => const LoginPageScreen(),
+        SignUpScreen.routeName: (context) => const SignUpScreen(),
       },
     );
   }

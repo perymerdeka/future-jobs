@@ -1,5 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:future_jobs/pages/sign_up_screen.dart';
 import 'package:future_jobs/theme/login_theme.dart';
 
 class LoginPageScreen extends StatefulWidget {
@@ -105,7 +106,8 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                           borderRadius: BorderRadius.circular(100),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Color(0xff4141A4)),
+                          borderSide:
+                              const BorderSide(color: Color(0xff4141A4)),
                           borderRadius: BorderRadius.circular(100),
                         )),
                   )
@@ -132,9 +134,14 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
               Padding(
                 padding: const EdgeInsets.only(top: 20, bottom: 80),
                 child: Center(
-                    child: Text(
-                  'Create New Account',
-                  style: signTextStyle,
+                  child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(SignUpScreen.routeName);
+                  },
+                  child: Text(
+                    'Create New Account',
+                    style: signTextStyle,
+                  ),
                 )),
               )
             ],
