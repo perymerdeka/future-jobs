@@ -11,6 +11,45 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  bool isUploaded = false;
+  Widget uploadImage() {
+    return Center(
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            isUploaded = !isUploaded;
+          });
+        },
+        child: Column(children: [
+          Image.asset(
+            'assets/icons/user_pic.png',
+            width: 120,
+            height: 120,
+          )
+        ]),
+      ),
+    );
+  }
+
+  Widget showedImage() {
+    return Center(
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            isUploaded = !isUploaded;
+          });
+        },
+        child: Column(children: [
+          Image.asset(
+            'assets/icons/logo.png',
+            width: 120,
+            height: 120,
+          )
+        ]),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,15 +70,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 40,
               ),
-              Center(
-                child: Column(children: [
-                  Image.asset(
-                    'assets/icons/user_pic.png',
-                    width: 120,
-                    height: 120,
-                  )
-                ]),
-              ),
+              isUploaded ? showedImage() : uploadImage(),
               const SizedBox(
                 height: 35,
               ),
