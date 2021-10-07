@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:future_jobs/pages/home_page.dart';
 import 'package:future_jobs/pages/login_page.dart';
 import 'package:future_jobs/theme/login_theme.dart';
 
@@ -187,7 +188,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 width: 312,
                 height: 45,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, HomePageScreen.routeName);
+                  },
                   child: Text(
                     'Sign Up',
                     style: buttonTextStyle,

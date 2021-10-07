@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:future_jobs/pages/home_page.dart';
 import 'package:future_jobs/pages/login_page.dart';
 import 'package:future_jobs/pages/onboarding_screen.dart';
 import 'package:future_jobs/pages/sign_up_screen.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
         LoginPageScreen.routeName: (context) => const LoginPageScreen(),
         SignUpScreen.routeName: (context) => const SignUpScreen(),
+        HomePageScreen.routeName : (context) => const HomePageScreen()
       },
     );
   }
