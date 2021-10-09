@@ -41,7 +41,7 @@ class HomePageScreen extends StatelessWidget {
 
     Widget body() {
       return Padding(
-        padding: const EdgeInsets.only(left: 25),
+        padding: const EdgeInsets.only(left: 25, top: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
