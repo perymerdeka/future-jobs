@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:future_jobs/theme/login_theme.dart';
+import 'package:future_jobs/widgets/job_card.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePageScreen extends StatelessWidget {
@@ -53,28 +54,34 @@ class HomePageScreen extends StatelessWidget {
                   fontWeight: FontWeight.w400),
             ),
             const SizedBox(
-              height: 16,
-            ),
-            Container(
-              width: 150,
-              height: 200,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/card/card_category.png'),
-                  ),
+              height: 16,),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: const [
+                    JobCard(
+                      jobTitle: 'Mobile Developer',
+                      imageUrl: 'assets/card/card_category.png',
+                    ),
+                    SizedBox(width: 16,),
+                    JobCard(
+                      jobTitle: 'App Designer',
+                      imageUrl: 'assets/card/bg1.png',
+                    ),
+                    SizedBox(width: 16,),
+                    JobCard(
+                      jobTitle: 'Content Writter',
+                      imageUrl: 'assets/card/bg2.png',
+                    ),
+                    SizedBox(width: 16,),
+                    JobCard(
+                      jobTitle: 'Video Grapher',
+                      imageUrl: 'assets/card/bg3.png',
+                    )
+                  ]
                 ),
-              child: Align(
-              alignment: Alignment.bottomLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 16, bottom: 16),
-                child: Text('Mobile Developer', style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontSize: 18,
-                ),),
-              ),
-              ),
-            )
-          ],
+              )
+            ],
         ),
       );
     }
