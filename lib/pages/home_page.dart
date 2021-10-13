@@ -54,34 +54,52 @@ class HomePageScreen extends StatelessWidget {
                   fontWeight: FontWeight.w400),
             ),
             const SizedBox(
-              height: 16,),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: const [
-                    JobCard(
-                      jobTitle: 'Mobile Developer',
-                      imageUrl: 'assets/card/card_category.png',
-                    ),
-                    SizedBox(width: 16,),
-                    JobCard(
-                      jobTitle: 'App Designer',
-                      imageUrl: 'assets/card/bg1.png',
-                    ),
-                    SizedBox(width: 16,),
-                    JobCard(
-                      jobTitle: 'Content Writter',
-                      imageUrl: 'assets/card/bg2.png',
-                    ),
-                    SizedBox(width: 16,),
-                    JobCard(
-                      jobTitle: 'Video Grapher',
-                      imageUrl: 'assets/card/bg3.png',
-                    )
-                  ]
+              height: 16,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(children: const [
+                JobCard(
+                  jobTitle: 'Mobile Developer',
+                  imageUrl: 'assets/card/card_category.png',
                 ),
-              )
-            ],
+                SizedBox(
+                  width: 16,
+                ),
+                JobCard(
+                  jobTitle: 'App Designer',
+                  imageUrl: 'assets/card/bg1.png',
+                ),
+                SizedBox(
+                  width: 16,
+                ),
+                JobCard(
+                  jobTitle: 'Content Writter',
+                  imageUrl: 'assets/card/bg2.png',
+                ),
+                SizedBox(
+                  width: 16,
+                ),
+                JobCard(
+                  jobTitle: 'Video Grapher',
+                  imageUrl: 'assets/card/bg3.png',
+                )
+              ]),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 2),
+              child: Text(
+                'Just Posted',
+                style: GoogleFonts.poppins(
+                    color: const Color(0xff272C2F),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
+              ),
+            )
+          ],
         ),
       );
     }
