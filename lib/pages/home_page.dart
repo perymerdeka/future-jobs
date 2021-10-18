@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:future_jobs/theme/home_theme.dart';
 import 'package:future_jobs/theme/login_theme.dart';
 import 'package:future_jobs/widgets/job_card.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -98,6 +99,32 @@ class HomePageScreen extends StatelessWidget {
                     fontSize: 16,
                     fontWeight: FontWeight.w400),
               ),
+            ),
+            const SizedBox(height: 16,),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 2),
+                  child: Image.asset(
+                    'assets/jobs/facebook.png',
+                    height: 45,
+                    width: 45,
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text(
+                    'Front-End Developer',
+                    style: jobTextStyle,
+                  ),
+                  Text(
+                    'Google',
+                    style: companyTextStyle,
+                  )
+                ])
+              ],
             )
           ],
         ),
